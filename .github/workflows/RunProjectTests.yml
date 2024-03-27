@@ -1,0 +1,35 @@
+# Summary: Runs tests against the project.
+# Push Trigger. Test in Play mode only.
+name: Run Project Tests 📊
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    name: Run tests for ${{ matrix.testMode }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    strategy:
+      matrix:
+        testMode:
+          - playmode
+          #- editmode
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          lfs: true
+
+      - uses: actions/cache@v3
+        with:
+          path: Library
+          key: Library
+          lookup-only: true
+
+      - uses: game-ci/unity-test-runner@v4
+        env:
+            UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+            UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+            UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+        with:
+            githubToken: ${{ secrets.GITHUB_TOKEN }}

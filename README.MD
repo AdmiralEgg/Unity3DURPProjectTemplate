@@ -1,6 +1,6 @@
 # Unity Standard URP Template
 This repo contains,
-1. A Project Template (`com.unity.template.aeg-3d-urp-0.1.6.tgz`) to start your Unity projects with.
+1. A Project Template (`com.unity.template.aeg-3d-urp-0.1.7.tgz`) to start your Unity projects with.
 2. An examples of a project set up with this template. 
 
 The intention of this work is to allow new prototype projects to be created fast.
@@ -20,12 +20,12 @@ Note: Not tested with Unity 6. Likely to need rework, as Unity 6 project will be
 Helper features also included,
 - Update the standard editor c# template.
 - Revert back to the default package manifest
-- Deploy a .gitignore file, and a package of github action files.
+- Deploy a .gitignore file and basic GitHub workflow files.
 
 # Installation & Use
-1. Copy the template file (`com.unity.template.aeg-3d-urp-0.1.6.tgz`) to to your editor path,
+1. Copy the template file (`com.unity.template.aeg-3d-urp-0.1.7.tgz`) to to your editor path,
 `<EDITORPATH>\Editor\2022_3_14\Editor\Data\Resources\PackageManager\ProjectTemplate`
-2. Open Unity Hub, and create a project with the new template (`aeg-3d-urp-0.1.6`).
+2. Open Unity Hub, and create a project with the new template (`aeg-3d-urp-0.1.7`).
 3. When the project opens, double click the `AEGStandardProjectSetup.unitypackage` to extract it. 
 4. 'Tools' will be added to the top menu. Click Tools -> Initial Setup Tools and follow the steps.
 
