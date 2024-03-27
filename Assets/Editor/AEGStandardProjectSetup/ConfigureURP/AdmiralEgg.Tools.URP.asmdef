@@ -1,0 +1,27 @@
+{
+    "name": "AdmiralEgg.Tools.URP",
+    "rootNamespace": "AdmiralEgg",
+    "references": [
+        "Unity.RenderPipelines.Universal.Runtime",
+        "Unity.Postprocessing.Runtime"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [
+        "URP_EXISTS"
+    ],
+    "versionDefines": [
+        {
+            "name": "com.unity.render-pipelines.universal",
+            "expression": "14.0.7",
+            "define": "URP_EXISTS"
+        }
+    ],
+    "noEngineReferences": false
+}

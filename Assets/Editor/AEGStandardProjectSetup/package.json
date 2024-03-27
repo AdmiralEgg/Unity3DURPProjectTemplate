@@ -1,0 +1,10 @@
+{
+    "name": "com.admiralegg.tools",
+    "version": "1.0.0",
+    "displayName": "AEG Standard Project Setup",
+    "description": "Standard Project Setup",
+    "unity": "2022.2",
+    "dependencies": {},
+    "keywords": [],
+    "author": {}
+}

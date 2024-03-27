@@ -1,0 +1,12 @@
+using UnityEngine;
+
+/// <summary>
+/// AEG Default Script Template V1.0
+/// </summary>
+public class #SCRIPTNAME# : MonoBehaviour
+{
+    void Awake()
+    {
+        #NOTRIM#
+    }
+}

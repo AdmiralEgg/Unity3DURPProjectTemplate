@@ -1,0 +1,42 @@
+# Builds the Project
+name: Build Project 🔨
+
+on: [push]
+
+jobs:
+  test:
+    name: Run build for platform ${{ matrix.targetPlatform }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    strategy:
+      matrix:
+        targetPlatform:
+          - StandaloneWindows64
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          lfs: true
+
+      - uses: actions/cache@v3 #https://github.com/actions/cache
+        with:
+          path: Library
+          key: Library
+          lookup-only: true
+
+      - uses: game-ci/unity-builder@v4
+        id: buildWin64
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+        with:
+          versioning: Semantic
+          targetPlatform: ${{ matrix.targetPlatform }}
+      
+      - run: echo 'Project Build Version ${{ steps.buildWin64.outputs.buildVersion }}'
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: Build_${{ matrix.targetPlatform }}_${{ steps.buildWin64.outputs.buildVersion }}
+          path: build/${{ matrix.targetPlatform }}
